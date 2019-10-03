@@ -18,7 +18,7 @@ module.exports = {
 
                 var user = JSON.parse(body);
                 if (user.first_name.length > 0) {
-                    var pool = new pg.Pool(config.PG_CONFIG);
+                    /*var pool = new pg.Pool(config.PG_CONFIG);
                     pool.connect(function(err, client, done) {
                         if (err) {
                             return console.error('Error acquiring client', err.stack);
@@ -43,9 +43,11 @@ module.exports = {
                                 }
                             });
 
-                        callback(user);
+
                     });
-                    pool.end();
+                    pool.end();*/
+
+                    callback(user);
                 } else {
                     console.log("Cannot get data for fb user with id",
                         userId);
